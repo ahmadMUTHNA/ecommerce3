@@ -1,0 +1,37 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="si"></div>
+<div class="contenar">
+    <div class="header">
+        <h3>{{product_datil.name}}</h3>
+        <h3>{{product_datil.price}}</h3>
+        <h3>NameProduct: {{product_datil.id}}</h3>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <input  type="text " name="name" placeholder="Name" class=" wi" required="">
+        <hr>
+        <input type="text " name="nameorder" placeholder="NameProduct" class="wi" required="">
+        <input type="text " name="addres" placeholder="Addres" class="floatleftinput" required="">
+        <input type="text " name="count_order" placeholder="Count_order" class="floatleftinput" required="">
+        <div class="clear"></div>
+        <input  type="text " name="number_phone" placeholder="Number_phone" class=" wi" required="">
+        <hr>
+        
+        <input href="{% url 'products:buy'  %}" type="submit" value="Buy" class="buton star">
+         <a style="background-color:rgb(118, 119, 118)" class="button" href="{% url 'products:buy'  %}">Confirm purchase order</a>
+        </input>
+        
+    </form>
+    <div class="clear"></div>
+    <div class="right">
+        <img src="{{product_datil.img.url}}" alt="" class="product-thumb">
+    </div>
+</div>
+
+    
+</div>
+
+
+
+	{% endblock content %}

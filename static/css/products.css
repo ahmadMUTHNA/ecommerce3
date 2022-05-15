@@ -1,0 +1,64 @@
+
+.clear{
+    clear: both;
+}
+.si{
+    width: 100%;
+    height: 100px;
+}
+.prodct{
+    float: left;
+    width: 24%;
+    margin: 5px;
+    margin-bottom: 40px;
+    position: relative;
+    box-shadow: 0 0 10px #ddd inset;
+}
+
+.img_product img{
+    width: 100%;
+    height: 300px;
+}
+.des_product{
+    text-align: left;
+}
+.des_product h1{
+    color: aliceblue;
+    font: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.des_product p{
+    color: aliceblue;
+    font: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+}
+.des_product span svg{
+    color:rgb(222, 222, 67);
+    margin-bottom: 7px;
+    width: 15%;
+    float: left;
+ 
+}
+.des_product span{
+    font-size: 20px;
+    color: azure;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.des_product button{
+    color: rgb(15, 15, 15);
+    background-color: rgb(51, 245, 96);
+    font-size: 20px;
+    border: 0;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    
+}

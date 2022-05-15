@@ -1,0 +1,30 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="si"></div>
+<div class="contenar">
+    <div class="header">
+        <h1>Search</h1>
+    <form method="GET" class="form" action="{% url 'products:product' %}">
+        
+        <input type="text " name="productname" placeholder="productname" class=" wi">
+        <hr>
+        <input type="text " name="productDescription" placeholder="productDescription" class="wi">
+        <input type="number " name="firstBrice" placeholder="firstBrice" class="floatleftinput">
+        <input type="number " name="lastBrice" placeholder="lastBrice" class="floatleftinput">
+        <div class="clear"></div>
+        <input type="submit" value="Search" class="buton">
+    </form>
+    <div class="clear"></div>
+    <div class="right">
+        <img src="{% static 'imag/mobile/1111.png' %}" class="product-thumb" alt="">
+    </div>
+</div>
+
+    
+</div>
+
+
+
+{% endblock content %}

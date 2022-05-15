@@ -1,0 +1,42 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+         <!-- section datil  -->
+
+    
+     <div class="datil">
+        <div class="datil_product_img">
+            <img src="{{product_datil.img.url}}" alt="">
+           
+        </div>
+        <div class="datil_product_des">
+            <h1>{{product_datil.name}}</h1>
+            <p>{{product_datil.category}}</p>
+            <p>{{product_datil.descriotion}}</p>
+            <p>{{product_datil.price}} $</p>
+            <p><a href="{% url 'products:like_product' product_datil.id  %}"><svg class="click_red" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg></a></p>
+              {% if messages %}
+              {% for msg in messages  %}
+                  <div style="border:2px solid #fff;margin:10px;background-color:rgba(255, 249, 249, 0.8);text-align:center;width:50%;color:red;font-size:20px">
+                      {{msg}}
+                  </div>
+              {% endfor %}
+          {% endif %}
+          {% if request.user.is_authenticated %}
+                <button class="button"><a href="{% url 'products:checkout' product_datil.id %}">Buy</a></button>
+            {% else %}
+                  <h3 style="color:red">To purchase the product, you must be logged in</h3>
+         {% endif %}
+        </div>
+
+    </div>
+
+ 
+{% endblock content %}
+
+
+    
+            
+       

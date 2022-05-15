@@ -1,0 +1,422 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- start slidshow -->
+    <div class="sizeimg">
+        <img class="slidImg" name="slidshow" alt="img" >
+    </div>
+  <!-- end slid show  -->
+
+  <!--  PRODUCTS  -->
+  <!-- shose -->
+  <section class="product"> 
+    <h2 class="product-category">SHOW PRODUCT</h2>
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card1.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card2.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card3.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card4.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card5.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card6.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card7.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card8.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card9.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop/card10.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!--  PRODUCTS  -->
+  <!-- clothes -->
+  <section class="product"> 
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/1.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/2.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/3.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/4.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/5.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/6.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/7.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/8.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/9.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/clothes/10.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!--  PRODUCTS  -->
+  <!--  product database -->
+  <!-- products -->
+ <div class="si"></div>
+ <div class="contenar">
+   <div class="prodcts">
+       {% for i in product|slice:':8' %}
+       <div class="prodct">
+           <div class="img_product">
+               {% if i.img %}
+                    <img src="{{i.img.url}}" alt="">
+               {% endif %}
+           </div>
+           <div class="des_product">
+               <h1> <a href="{% url 'products:datil' i.id %}">{{i.name}}</a></h1>
+               <p>{{i.category}}</p>
+               <span>{{i.price}} $</span>
+               <button><a href="{% url 'products:datil' i.id %}">Show details</a></button>
+               
+           </div>
+       </div>
+        {% endfor %}
+      
+       <div class="clear"></div>
+   </div>
+ </div>
+
+  <!--  product database -->
+
+  <!-- laptop -->
+  <section class="product"> 
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/1.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/2.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/3.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/4.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/5.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/6.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/7.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/8.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/9.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/laptop2/10.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!--  PRODUCTS  -->
+  <!-- mobile -->
+  <section class="product"> 
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/1.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/2.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/3.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/4.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/5.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/6.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/7.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/8.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/9.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/mobile/10.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!--  PRODUCTS  -->
+  <!-- bags -->
+  <section class="product"> 
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/1.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/2.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/3.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/4.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/5.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/6.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/7.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/8.jpg' %}" class="product-thumb" alt="">
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/9.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{% static 'imag/bags/10.jpg' %}" class="product-thumb" alt="">
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!-- start review -->
+<div class="review">
+    <div class="contenar">
+        <h1 class="titel_revio">Review People</h1>
+        <div class="items">
+            <div class="item1">
+                <div class="img_item"><img src="{% static 'imag/man_weman/5.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+                </div>
+            </div>
+            <dev class="clear"></dev>
+            <div class="item2">
+                <div class="img_item"><img src="{% static 'imag/man_weman/3.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+                
+                </div>
+            </div>
+            <dev class="clear"></dev>
+            <div class="item3">
+                <div class="img_item"><img src="{% static 'imag/man_weman/1.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+                </div>
+            </div>
+        </div>
+        <dev class="clear"></dev>
+        
+    </div>
+</div>
+<!-- ///// -->
+<div class="review">
+    <div class="contenar">
+        <div class="items">
+            <div class="item1">
+                <div class="img_item"><img src="{% static 'imag/man_weman/7.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+                </div>
+            </div>
+            <dev class="clear"></dev>
+            <div class="item2">
+                <div class="img_item"><img src="{% static 'imag/man_weman/8.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+
+                </div>
+            </div>
+            <dev class="clear"></dev>
+            <div class="item3">
+                <div class="img_item"><img src="{% static 'imag/man_weman/9.jpg' %}" alt=""></div>
+                <div class="datel_item">
+                    <h2>Joun Smoth</h2>
+                    <p>This is a beautiful and wonderful product and the price is suitable and I advise everyone to hire it</p>
+                </div>
+            </div>
+            
+        </div>
+        <dev class="clear"></dev>
+    </div>
+</div>
+<def class="clear"></def>
+<!-- footer  -->
+
+
+</div>
+
+    <script>
+        var i=0;
+var slidImag=["{% static 'imag/laptop/111.jpg' %}","{% static 'imag/laptop/112.jpg' %}","{% static 'imag/laptop/115.jpg' %}"];
+
+var slidShow=function(){
+    
+    document.slidshow.src=slidImag[i];
+    if (i < slidImag.length-1){
+        i++;
+    }else{
+        i=0;
+    }
+    setTimeout("slidShow()",2000);
+}
+slidShow()
+
+    </script>
+    {% endblock content %}
+
+

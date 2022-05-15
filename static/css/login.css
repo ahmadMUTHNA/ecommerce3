@@ -1,0 +1,96 @@
+.body{
+       position: relative; 
+       margin: 100px ;
+       margin-top: 10px;
+       padding: 0;
+       font-family: sans-serif;
+       background-repeat: round;
+       background-size: cover;
+
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.si{
+    height: 100px;
+    width: 100%;
+    background-color: #263238;
+  }
+.box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+   padding: 40px ;
+    background: rgba(255, 249, 249, 0.8) ;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5); 
+    border-radius: 10px ;
+
+}
+
+.box h2{
+    color: rgb(18, 17, 17);
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+      
+}
+
+.box .inputBox{
+    position: relative ;
+}
+.box .inputBox input{
+    width: 100%;
+    padding:  10px 0 ;
+    font-size: 16px;  
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(9, 9, 9);
+    outline: none;
+    background: transparent ;
+    
+    
+}
+.box .inputBox label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(16, 15, 15);
+    pointer-events: none;
+    transition: 1.4s;
+    
+}
+
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label{
+    top: -18px;
+    left: 0;
+    color: #03a9f4;
+    font-size: 12px;    
+}
+
+.box input[type="submit"]{
+    
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background:  orange;;
+    padding: 10px 20px ;
+    cursor: pointer;
+    border-radius: 10px ;
+    
+}
+
+
+
+
+
+

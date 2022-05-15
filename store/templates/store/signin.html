@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- start navbar -->
+    <div class="nav">
+        <div class="contenar">
+            <div class="logo floatLeft">ECOMERSE</div>
+            <div class="floatLeft size">
+                <ul class="list_1 ">
+                    <li><a href="{% url 'products:home' %}">Home</a></li>
+                    <li><a href="{% url 'products:product' %}">Product</a></li>
+                    <li class="dropdown heden" >category
+                        <div class="dropdown-content">
+                            <a href="{% url 'products:mobile' %}">Mobile</a>
+                            <a href="{% url 'products:laptop' %}">Laptop</a>
+                            <a href="{% url 'products:clothes' %}">Clothes</a>
+                            <a href="{% url 'products:shose_bage' %}">Shoes Bags</a>
+                         </div>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="floatLeft size">
+                <ul class="list_2">
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'products:show_product_like' %}"><svg class="click_red siz_media" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                      </svg></a></li>
+                      {% endif %}
+                    <li class="search1">
+                        <a href="{% url 'products:search' %}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search siz_media" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg></a>
+                        
+                    </li>
+                    
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'products:profile' %}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill siz_media" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      </svg></a></li>
+                    {% else %}
+                    <li><a href="{% url 'products:login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+                
+            </div>
+            <div class="clear"></div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <!-- end nvbar -->
+    <!--login form-->           
+    <div class="si"></div>
+    <div class="body">
+<div class="box">
+        
+    
+   
+   
+     {% if messages %}
+        {% for msg in messages  %}
+        <div style="border:2px solid #fff;margin:10px;background-color:rgba(255, 249, 249, 0.8);text-align:center;width:50%;color:red;font-size:20px">
+            {{msg}}
+        </div>
+        {% endfor %}
+    {% endif %} 
+    {% if request.user.is_authenticated %}
+    <h2>welcom {{request.user.username}}</h2>
+    {% else %}
+    <h2>Signin</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="" name="username" required="">
+            <label>username</label>
+           </div>
+           <div class="inputBox">
+            <input type="" name="password" required="">
+            <label>password</label>
+           </div>
+
+       
+        <input type="submit" name="" value="Submit">
+    </form>
+        
+    {% endif %}
+    
+</div>
+</div>
+
+</body>
+</html>
+
+
+
